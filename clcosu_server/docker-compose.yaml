@@ -1,0 +1,44 @@
+services:
+  # Development services
+  postgres:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "8090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: clcosu
+      POSTGRES_PASSWORD: "JhGy8-7jRAPMVoaeQQRHqCflEyFgUlAo"
+    volumes:
+      - clcosu_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6.2.6
+    ports:
+      - "8091:6379"
+    command: redis-server --requirepass "r4UVD970EoXV0cQpB-Vwa50-2IZomYqI"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+  # Test services
+  postgres_test:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "9090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: clcosu_test
+      POSTGRES_PASSWORD: "4jm4wRnXtwFyd4SFX3YxNP7-mTWfF5MO"
+    volumes:
+      - clcosu_test_data:/var/lib/postgresql/data
+
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - "9091:6379"
+    command: redis-server --requirepass "dq2SjAOB56tK-5QzC6jEGYnyzYf1fLUa"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+volumes:
+  clcosu_data:
+  clcosu_test_data:

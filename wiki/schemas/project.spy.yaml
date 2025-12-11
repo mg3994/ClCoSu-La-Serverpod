@@ -1,0 +1,24 @@
+class: Project
+table: project
+fields:
+  title: String
+  description: String?
+  
+  # Stakeholders
+  clientId: int, relation(name=client_projects)
+  client: UserProfile?, relation(name=client_projects)
+
+  contractorId: int?, relation(name=contractor_projects)
+  contractor: UserProfile?, relation(name=contractor_projects)
+  
+  # Status
+  status: ProjectStatus
+  startDate: DateTime?
+  endDate: DateTime?
+  
+  # Metadata
+  budget: double?
+  location: String?
+  
+  createdAt: DateTime
+  updatedAt: DateTime

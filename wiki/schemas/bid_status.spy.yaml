@@ -1,0 +1,6 @@
+class: BidStatus
+enum:
+  - submitted
+  - accepted
+  - rejected
+  - withdrawn

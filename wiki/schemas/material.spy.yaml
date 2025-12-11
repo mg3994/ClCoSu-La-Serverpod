@@ -1,0 +1,17 @@
+class: Material
+table: material
+fields:
+  name: String
+  description: String?
+  
+  supplierId: int, relation(name=supplier_materials)
+  supplier: UserProfile, relation(name=supplier_materials)
+  
+  pricePerUnit: double
+  unit: String # e.g. "kg", "ton", "piece"
+  stockQuantity: double
+  
+  imageUrl: String?
+  
+  createdAt: DateTime
+  updatedAt: DateTime

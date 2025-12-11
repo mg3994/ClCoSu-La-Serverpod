@@ -1,0 +1,17 @@
+class: ProjectTask
+table: project_task
+fields:
+  title: String
+  description: String?
+  
+  projectId: int, relation(name=project_tasks)
+  project: Project, relation(name=project_tasks)
+
+  assigneeId: int?, relation(name=assigned_tasks)
+  assignee: UserProfile?, relation(name=assigned_tasks)
+  
+  status: ProjectTaskStatus
+  dueDate: DateTime?
+  
+  createdAt: DateTime
+  updatedAt: DateTime

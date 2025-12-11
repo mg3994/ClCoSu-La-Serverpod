@@ -1,0 +1,6 @@
+class: UserRole
+enum:
+  - client
+  - contractor
+  - supplier
+  - labour

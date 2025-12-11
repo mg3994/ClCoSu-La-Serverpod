@@ -1,0 +1,7 @@
+class: ProjectStatus
+enum:
+  - planning
+  - active
+  - onHold
+  - completed
+  - cancelled

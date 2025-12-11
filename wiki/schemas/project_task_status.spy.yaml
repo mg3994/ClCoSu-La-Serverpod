@@ -1,0 +1,7 @@
+class: ProjectTaskStatus
+enum:
+  - pending
+  - inProgress
+  - review
+  - completed
+  - blocked

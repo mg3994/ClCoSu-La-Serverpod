@@ -1,0 +1,19 @@
+class: UserProfile
+table: user_profile
+fields:
+  userId: int, parent=serverpod_auth.UserInfo
+  roles: List<UserRole>
+  
+  # Basic Info
+  firstName: String
+  lastName: String
+  phoneNumber: String?
+  bio: String?
+  
+  # Professional Info (for Contractors/Suppliers/Labour)
+  hourlyRate: double?
+  companyName: String?
+  
+  # Metadata
+  createdAt: DateTime
+  updatedAt: DateTime

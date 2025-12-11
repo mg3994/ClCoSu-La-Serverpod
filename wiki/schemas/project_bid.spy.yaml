@@ -1,0 +1,17 @@
+class: ProjectBid
+table: project_bid
+fields:
+  projectId: int, relation(name=project_bids)
+  project: Project, relation(name=project_bids)
+
+  contractorId: int, relation(name=contractor_bids)
+  contractor: UserProfile, relation(name=contractor_bids)
+  
+  amount: double
+  proposalDetails: String?
+  estimatedDurationDays: int?
+  
+  status: BidStatus
+  
+  createdAt: DateTime
+  updatedAt: DateTime
