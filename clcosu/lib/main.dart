@@ -42,7 +42,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Serverpod Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
       home: const MyHomePage(title: 'Serverpod Example'),
     );
   }
